@@ -412,7 +412,7 @@ module E164
   # Returns true if the number starts with 4 digits and ends with 6-12 characters.
   #
   def self.vanity_number?(number)
-    (number.gsub(' ', '') =~ /^\d{4}\w{6,12}$/) ? true : false
+    !!(number.gsub(' ', '') =~ /^\+{0,1}\d{4,6}[A-Za-z]{6,12}$/)
   end
   
   # Converts any character in the vanity_number to it's numeric representation.

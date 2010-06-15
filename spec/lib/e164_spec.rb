@@ -356,6 +356,8 @@ describe E164 do
       it {E164.vanity_number?('0848 SUCCESSMATCH').should be_true}
       it {E164.vanity_number?('080 NO NO NO').should be_false}
       it {E164.vanity_number?('0900 KURZ').should be_false}
+      it {E164.vanity_number?('41 800 WEGGLI').should be_true}
+      it {E164.vanity_number?('+41 800 WEGGLI').should be_true}
     end
     
     describe 'vanity_to_number' do
